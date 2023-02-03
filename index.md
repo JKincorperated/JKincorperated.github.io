@@ -41,13 +41,14 @@ The data should be encrypted with the receipients public key. <br>
 The Signature must be the encrypted data signed by the senders private key.
 All IPvD protocols must have a type.
 Current Types:
-|Protocol|Type|
+
+| Protocol | Type |
 |--------|----|
-|IDRP| 1|
-|IDHP| 2|
-|TCP| 3|
-|UDP| 4|
-|PING| 5|
+| IDRP | 1 |
+| IDHP | 2 |
+| TCP | 3 |
+| UDP | 4 |
+| PING | 5 |
 
 ### All IPvD packets should have the EtherType 0xDA11
 
