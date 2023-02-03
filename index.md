@@ -61,7 +61,8 @@ Current Types:
 | End Device or Device | Generic device should be assumed unless otherwise stated |
 | NAT-Device | A Device that separates a the internet and a private network |
 | Semi-Node | An IDRP router that only runs in semi-mode |
-| Full-Node | An IDRP router that only runs in full-mode |
+| Full-Node | An IDRP router that only runs in full-mode |#
+
 <br>
 
 ## Network Types
