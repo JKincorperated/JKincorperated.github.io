@@ -1,3 +1,5 @@
+{% seo title=false %}
+
 All packets must be in the order they appear in on the list.
 
 ## Addresses
