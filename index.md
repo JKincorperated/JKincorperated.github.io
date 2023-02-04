@@ -1,5 +1,3 @@
-# IPvD Protocol Specification Version 1 (Revision 3)
-
 All packets must be in the order they appear in on the list.
 
 ## Addresses
