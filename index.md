@@ -154,9 +154,9 @@ IDRP Packet IPvD:
 - MAC Address Hop (utf-8) (12 Chars)
 - TTL (uint32)
 
-### Ping
-
 IDRP is an IPvD Protocol.
+
+### Ping
 
 Send a ping packet and await a responce.
 The random data allows signing of the packet insuring authenticity.
