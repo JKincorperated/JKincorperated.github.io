@@ -10,7 +10,7 @@ All packets must be in the order they appear in on the list.
 - Generate a ECC-384 Keypair
 - Save the public key.
 - Hash your public key with the SHA-512 algorithm
-- Encode the hash in Base32
+- Encode the hash in extended Base32
 - Add Version Specifier
 
 ### Address Format
@@ -28,14 +28,14 @@ v1-266SL62DWSZS5TFOIBMLFJXAOMSBUA4WHZQPRB7BINLWRLEIUS3BTX7RDVD2PEKJY6KSCUT3A4PRS
 
 All IPvD packets must contain (In this order):
 
-- Sender Address Size (uint16)
+- Sender Address Size (uint16) (Big Byte order)
 - Sender Address (utf-8)
-- Receipient Address Size (uint16)
+- Receipient Address Size (uint16) (Big Byte order)
 - Receipient Address (utf-8)
-- Signature Size (uint16)
+- Signature Size (uint16) (Big Byte order)
 - Signature (bytes)
-- Hops (uint8)
-- Type (uint8)
+- Hops (uint8) (Big Byte order)
+- Type (uint8) (Big Byte order)
 - Data (bytes)
 
 The data should be encrypted with the receipients public key. <br>
@@ -92,13 +92,13 @@ When a client connects to a new network, It should broadcast a PDP packet (detai
 
 #### Responce Packet
 
-- Return Address Size (uint16)
+- Return Address Size (uint16) (Big Byte order)
 - Return Address (utf-8)
 - Managed (bool)  [Is this flag is set the following should also be added]
   - Default Route MAC Address (utf-8) (12 Chars)
-  - Main DNS Server Address Size (uint16)
+  - Main DNS Server Address Size (uint16) (Big Byte order)
   - Main DNS Server Address (utf-8)
-  - Alt DNS Server Address Size (uint16)
+  - Alt DNS Server Address Size (uint16) (Big Byte order)
   - Alt DNS Server Address (utf-8)
 - Type (uint8)
   - Should be 1 if the connection is to a end-device
@@ -118,7 +118,7 @@ ARP is a level 2 Protocol
 
 ARP should only be used in internal networks. When a client on a internal network does not know an address it should broadcast a ARP packet. This are packet should contain the following:
 
-- IPvD Address Size (uint16)
+- IPvD Address Size (uint16) (Big Byte order)
 - IPvD Address (utf-8)
 
 The server should respond with:
@@ -145,14 +145,14 @@ Node behaivor:
 - If receiving a route from a node, the recieving node should verify the connection by sending an IDRP ping packet
 - All IPvD packets should contain a “hops” section the default should be 128. Every node the packet passes through should decrease the value by 1
 - If a node receives a packet with a hop number of 0, the packet should be discarded. 
-- All packets should have a TTL (Time to live). This value is in seconds, If the difference between the time the route was saved and the current time is longer than the time to live. The route should be deleted a TTL should never exceed 2630000.
+- All packets should have a TTL (Time to live). This value is in seconds, If the difference between the time the route was saved and the current time is longer than the time to live. The route should be deleted a TTL should never exceed 2^31-1.
 - Every time a node receives a route it should forward it on to all other nodes. Full nodes should never send routes to semi-nodes. Semi-nodes should send send all routes received to the default node. But semi-node should not cache this info.
 
 IDRP Packet IPvD:
-- IPvD Route Address Size (uint16)
+- IPvD Route Address Size (uint16) (Big Byte order)
 - IPvD Route Address (utf-8)
 - MAC Address Hop (utf-8) (12 Chars)
-- TTL (uint32)
+- TTL (uint32) (Big Byte order)
 
 IDRP is an IPvD Protocol.
 
@@ -181,7 +181,7 @@ IDHP is where the key exchange takes place.
 The client should send a IDHP packet containing the clients public key and the server should respond the same. Both of the devices should verify the address and the public key by hashing the public key and verify that last section of the address. The IDHP responce is the same as the orignally sent packet but with the responders public key.
 
 IDHP Packet:
-- Public key Size (uint16)
+- Public key Size (uint16) (Big Byte order)
 - Public key (utf-8)
 
 
