@@ -30,15 +30,15 @@ All IPvD packets must contain (In this order):
 
 - Sender Address Size (uint16) (Big Byte order)
 - Sender Address (utf-8)
-- Receipient Address Size (uint16) (Big Byte order)
-- Receipient Address (utf-8)
+- Recipient Address Size (uint16) (Big Byte order)
+- Recipient Address (utf-8)
 - Signature Size (uint16) (Big Byte order)
 - Signature (bytes)
 - Hops (uint8) (Big Byte order)
 - Type (uint8) (Big Byte order)
 - Data (bytes)
 
-The data should be encrypted with the receipients public key. <br>
+The data should be encrypted with the recipients public key. <br>
 The Signature must be the encrypted data signed by the senders private key.
 All IPvD protocols must have a type.
 Current Types:
@@ -125,7 +125,7 @@ The server should respond with:
 
 - MAC Address (utf-8) (12 Chars)
 
-If the NAT-device detects a ARP packet, and none of the requested addresses are on the network the NAT-device runs. It should not respond. If the requested address it not on the network the NAT-device should respond its MAC address. Then, It should relay any packets (that a not for the NAT-Device) to the default route or a applicable routes.
+If the NAT-device detects a ARP packet, and none of the requested addresses are on the network the NAT-device runs. It should not respond. If the requested address is not on the network the NAT-device should respond its MAC address. Then, It should relay any packets (that a not for the NAT-Device) to the default route or a applicable routes.
 
 ### IDRP (IpvD Routing Protocol)
 
