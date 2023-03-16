@@ -1,7 +1,29 @@
 ---
 title: IPvD Protocol V1 Specs
 ---
+
+# IPvD (Internet Protocol Version Decentralised)
+
 All packets must be in the order they appear in on the list.
+
+## Why?
+
+### Security
+
+Because IPvD uses content based addressing, end to end encryption can be used as soon as the connection has started. This almost eliminates man-in-the-middle attacks.
+Also, IDRP (see below) has been designed to verify that the route can be accessed by the node preventing route hijacking.
+
+### Backwards Compatibility
+
+As each address has a version specifier at the start of the address, IPvD can handle breaking changes as the server and client should be able to detect the highest common protocol version and use that.
+
+### Flexability
+
+The IPvD address has no fixed size, so when SHA-512 becomes obsolete or when quantum security comes around servers can upgrade without downtime. As any client can connect with every protocol version. Also, because every IP can be generated offline, remote locations (like mars) can setup infrastructure without waiting 20 minutes to get an IP.
+
+### Decentralization
+
+Because their is no central authority anyone can get online (as long as they have someone willing to link their systems)
 
 ## Addresses
 
@@ -94,7 +116,7 @@ When a client connects to a new network, It should broadcast a PDP packet (detai
 
 - Return Address Size (uint16) (Big Byte order)
 - Return Address (utf-8)
-- Managed (bool)  [Is this flag is set the following should also be added]
+- Managed (bool)  [If this flag is set the following should also be added]
   - Default Route MAC Address (utf-8) (12 Chars)
   - Main DNS Server Address Size (uint16) (Big Byte order)
   - Main DNS Server Address (utf-8)
@@ -182,8 +204,9 @@ The client should send a IDHP packet containing the clients public key and the s
 
 IDHP Packet:
 - Public key Size (uint16) (Big Byte order)
-- Public key (utf-8)
+- Public key (utf-8
 
+The client and server when receiving should determine the highest common version for the protocol to use.
 
 <br>
 
