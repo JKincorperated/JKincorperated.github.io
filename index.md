@@ -19,11 +19,11 @@ As each address has a version specifier at the start of the address, IPvD can ha
 
 ### Flexibility
 
-The IPvD address has no fixed size, so when SHA-512 becomes obsolete or when quantum security comes around servers can upgrade without downtime. As any client can connect with every protocol version. Also, because every IP can be generated offline, remote locations (like mars) can setup infrastructure without waiting 20 minutes to get an IP.
+The IPvD address has no fixed size, so when SHA-512 becomes obsolete or when quantum security comes around servers can upgrade without downtime. As any client can connect with every protocol version. Also, because every IP can be generated offline, remote locations (like mars) can set up infrastructure without waiting 20 minutes to get an IP.
 
 ### Decentralisation
 
-Because their is no central authority anyone can get online (as long as they have someone willing to link their systems)
+Because there is no central authority anyone can get online (as long as they have someone willing to link their systems)
 
 ## Addresses
 
