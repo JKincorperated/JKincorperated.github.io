@@ -105,6 +105,8 @@ Current Types:
 
 PDP is a Level 2 Protocol
 
+It has an ethertype of 0xda12
+
 When a client connects to a new network, It should broadcast a PDP packet (details Below) and await a response. Then, the info should be stored for the interface the packet was recieved on.<br>
 
 #### Request Packet
@@ -137,6 +139,8 @@ Switches should forward PDP packets to the known NAT-Device. If a switch is used
 ### ARP (Address Resolution Protocol)
 
 ARP is a level 2 Protocol
+
+It has an ethertype of 0xda13
 
 ARP should only be used in internal networks. When a client on a internal network does not know an address it should broadcast a ARP packet. This are packet should contain the following:
 
