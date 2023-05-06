@@ -107,7 +107,7 @@ PDP is a Level 2 Protocol
 
 It has an ethertype of 0xda12
 
-When a client connects to a new network, It should broadcast a PDP packet (details Below) and await a response. Then, the info should be stored for the interface the packet was recieved on.<br>
+When a client connects to a new network (and every minute), It should broadcast a PDP packet (details Below) and await a response. Then, the info should be stored for the interface the packet was recieved on.<br>
 
 #### Request Packet
 
