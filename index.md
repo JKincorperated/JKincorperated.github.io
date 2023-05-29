@@ -25,8 +25,6 @@ The IPvD address has no fixed size, so when SHA-512 becomes obsolete or when qua
 
 Because there is no central authority anyone can get online (as long as they have someone willing to link their systems)
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
-
 ## Addresses
 
 ### To obtain an address
@@ -219,6 +217,10 @@ The client and server (when connecting) must determine the highest common versio
 TCP and UDP should not deviate from IPv6.
 
 ## Licence and modification
+
+```
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 and RFC 8174.
+```
 
 ```
 This is free and unencumbered software released into the public domain.
