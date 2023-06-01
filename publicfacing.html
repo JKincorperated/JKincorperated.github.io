@@ -1,8 +1,399 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-  }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IPvD will help revolutionize the modern internet by stopping censorship and centralization.">
+    <title>IPvD - Decentralising the web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #030911;
+            color: aliceblue;
+            overflow-x: hidden;
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .header {
+            height: 100vh;
+            width: 100vw;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        .header h1 {
+            font-size: 50px;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: xx-large;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .header .background {
+            display: inline;
+            position: absolute;
+            background-image: url("/earth.webp");
+            width: 100vw;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: -1;
+            filter: blur(24px);
+            -webkit-filter: blur(24px)
+        }
+
+        .block {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 50% 0px 50%;
+            grid-template-columns: 50% 50%;
+            -ms-grid-rows: 70vh;
+            grid-template-rows: 70vh;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .block>*:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+        }
+
+        .block>*:nth-child(2) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+        }
+
+        .block2 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 100%;
+            height: 70vh;
+            text-align: center;
+            margin: 5%;
+        }
+
+        .block .left {
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
+            grid-area: 1 / 1 / 2 / 2;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 5em 0 5em 10em;
+            text-align: right;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+            opacity: 0;
+            -webkit-transform: translateX(-50vh);
+            -ms-transform: translateX(-50vh);
+            transform: translateX(-50vh);
+            -webkit-transition: all 0.7s;
+            -o-transition: all 0.7s;
+            transition: all 0.7s;
+        }
+
+        .block .right {
+            -ms-grid-row: 1;
+            -ms-grid-row-span: 1;
+            -ms-grid-column: 2;
+            -ms-grid-column-span: 1;
+            grid-area: 1 / 2 / 2 / 3;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 5em 10em 5em 0;
+            text-align: left;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+            opacity: 0;
+            -webkit-transform: translateX(100vh);
+            -ms-transform: translateX(100vh);
+            transform: translateX(100vh);
+            -webkit-transition: all 0.7s;
+            -o-transition: all 0.7s;
+            transition: all 0.7s;
+        }
+
+        p {
+            font-size: x-large;
+        }
+
+        .al-center {
+            text-align: center !important;
+        }
+
+        .block2 p {
+            margin-bottom: 100px;
+        }
+
+        img {
+            margin: 25%;
+        }
+
+        a {
+            color: aliceblue;
+        }
+
+        .inView {
+            opacity: 1 !important;
+            -webkit-transform: translateX(0px) !important;
+            -ms-transform: translateX(0px) !important;
+            transform: translateX(0px) !important;
+        }
+
+        .footer {
+            background-color: #010305;
+            height: 5vh;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 100vw;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="background"></div>
+        <h1>IPvD</h1>
+        <h3>Decentralising the web</h3>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <img src="/icons/about.svg" alt="">
+        </div>
+
+        <div class="right">
+            <p>
+            <h3>About</h3>
+            <p>IPvD, which is an acronym for "Internet Protocol Version Decentralised", is set to revolutionize the way
+                we connect and communicate on the internet. With its advanced features and forward-thinking design, IPvD
+                offers numerous advantages over traditional IP protocols and will let the internet grow past traditional
+                boundaries.</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <p>
+            <h3>Flexible Security</h3>
+            <P>In today's digital landscape, security is paramount. IPvD addresses this concern by utilizing
+                content-based addressing, allowing for end-to-end encryption right from the start of your connection.
+                This robust security measure virtually eliminates the risk of man-in-the-middle attacks, ensuring that
+                your data remains confidential and protected. In contrast, traditional IPs often rely on additional
+                layers of security measures, which may not offer the same level of comprehensive protection.</P>
+            </p>
+        </div>
+
+        <div class="right">
+            <img src="/icons/security.svg" alt="">
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <img src="/icons/plug.svg" alt="">
+        </div>
+
+        <div class="right">
+            <h3>Seamless Compatibility</h3>
+            <p>IPvD recognizes the importance of seamless integration within existing IP infrastructure. By including a
+                version specifier at the beginning of each address, IPvD ensures backward compatibility. This means that
+                servers and clients can effortlessly detect and adapt to the highest common protocol version, enabling
+                smooth communication between different devices and networks. In comparison, traditional IPs require
+                extensive compatibility testing and upgrades, which can be time-consuming and result in disruptions
+                during the transition process.</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <h3>Unmatched Flexibility</h3>
+            <p>IPvD's inherent flexibility allows for future-proofing your network infrastructure. Unlike traditional
+                IPs that rely on fixed address sizes, IPvD addresses can evolve and adapt as technology advances. For
+                instance, when encryption algorithms like SHA-512 become obsolete or when quantum security becomes
+                mainstream, IPvD allows servers to upgrade their infrastructure without any downtime. This flexibility
+                ensures that your communication remains secure and up-to-date, even in the face of rapidly evolving
+                technologies.</p>
+        </div>
+
+        <div class="right">
+            <img src="/icons/puzzle.svg" alt="">
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <img src="/icons/dec.svg" alt="">
+        </div>
+
+        <div class="right">
+            <h3>Empowering Decentralization</h3>
+            <p>One of the most exciting aspects of IPvD is its decentralization. By eliminating the need for a central
+                authority, IPvD enables anyone to get online as long as they have someone willing to link their systems.
+                This groundbreaking feature fosters inclusivity and empowers individuals and communities to create their
+                own networks, paving the way for greater freedom and autonomy in online communication. In contrast,
+                traditional IPs rely on centralized entities for address allocation and management, which can limit
+                accessibility and control.</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <h3>Public and Private Networks</h3>
+            <p>IPvD offers support for both public and private networks, catering to diverse connectivity requirements.
+                Public networks provide global accessibility, enabling seamless connections with devices worldwide. This
+                openness fosters collaboration, information sharing, and the growth of interconnected communities. On
+                the other hand, private networks ensure heightened privacy and control by restricting access to
+                authorized devices within a specific network. This distinction allows individuals and organizations to
+                tailor their network infrastructure based on their specific needs and security considerations.</p>
+        </div>
+
+        <div class="right">
+            <img src="/icons/earth.svg" alt="">
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <img src="/icons/speech.svg" alt="">
+        </div>
+
+        <div class="right">
+            <h3>Spread the Word</h3>
+            <p>Share the advantages of IPvD with your peers, colleagues, and the wider internet community. Engage in
+                discussions, organize presentations, and collaborate with others to raise awareness and generate
+                interest in
+                adopting IPvD. Encouraging adoption and educating others about its benefits are crucial steps in driving
+                its
+                widespread acceptance.</p>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <h3>Develop Software and Drivers</h3>
+            <p>To accelerate the adoption of IPvD, contribute by creating software, applications, and drivers that
+                support
+                this protocol. By developing tools that facilitate seamless integration and usage, you can contribute to
+                the
+                growing ecosystem of IPvD-compatible solutions. This active participation in software development will
+                drive
+                the expansion of IPvD and its applications across various industries.</p>
+            <p>You can view the specification <a href="/specs">here</a></p>
+        </div>
+
+        <div class="right">
+            <img src="/icons/gears.svg" alt="">
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="left">
+            <img src="/icons/github.svg" alt="">
+        </div>
+
+        <div class="right">
+            <h3>Contribute to Improvement</h3>
+            <p>IPvD is a community-driven protocol that welcomes feedback, suggestions, and ideas for enhancement.
+                Engage in
+                open discussions, participate in forums, and collaborate with the community to shape the future of
+                internet
+                communication. Your contributions can help refine and improve IPvD as it continues to evolve.</p>
+            <p>You can improve our specs <a href="https://github.com/JKincorperated/JKincorperated.github.io">here</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>IPvD is released under the Unlicense, granting you complete freedom to use, modify, and distribute it
+            without any restrictions or obligations.</h5>
+    </div>
+
+    <script>
+        let elementsArray = document.querySelectorAll(".block");
+
+        window.addEventListener('scroll', fadeIn);
+        function fadeIn() {
+            for (var i = 0; i < elementsArray.length; i++) {
+                var elem = elementsArray[i]
+                var distInView = elem.getBoundingClientRect().top - window.innerHeight + 50;
+                if (distInView < 0) {
+                    elem.getElementsByClassName("right")[0].classList.add("inView");
+                    elem.getElementsByClassName("left")[0].classList.add("inView");
+                } else {
+                    elem.getElementsByClassName("right")[0].classList.remove("inView");
+                    elem.getElementsByClassName("left")[0].classList.remove("inView");
+                }
+            }
+        }
+        fadeIn();
+    </script>
+</body>
+
+</html>
