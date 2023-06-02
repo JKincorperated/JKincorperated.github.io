@@ -4,12 +4,12 @@
 <head>
     <script>
         addEventListener("resize", (event) => {
-            if ((screen.width / screen.height) > 1) {
+            if (((screen.width / screen.height) > 1)  || screen.width > 1000 || screen.height > 1000) {
                 window.location = "/"
             }
         });
 
-        if ((screen.width / screen.height) > 1) {
+        if (((screen.width / screen.height) > 1) || screen.width > 1000 || screen.height > 1000) {
             window.location = "/"
         }
     </script>
